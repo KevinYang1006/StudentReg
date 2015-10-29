@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+
+	<title>Student Registration App</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+	<script type="text/javascript" src="controllers/controller.js"></script>
+</head>
+<body>
+	<div class="container" ng-controller="mainController">
+		<h1>Student Registration</h1>
+		<!-- <input ng-model="test">{{test}} -->
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Student Name</th>
+					<th>Student Number</th>
+					<th>Program of Study</th>
+					
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input class="form-control" placeholder="please enter the name" ng-model="student.name"></td>
+					<td><input class="form-control" placeholder="please enter the student number" ng-model="student.number"></td>
+					<td><input class="form-control" placeholder="please enter the program of study" ng-model="student.pofs"></td>
+					<td><button class="btn btn-primary" ng-click="addStudent()">Add</button></td>
+
+				</tr>
+				<tr ng-repeat="student in studentList">
+					<td>{{student.name}}</td>
+					<td>{{student.number}}</td>
+					<td>{{student.pofs}}</td>
+					<td><button class="btn btn-danger" ng-click="delete(student._id)">Delete</button></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+	</div>
+
+</body>
+</html>
+
